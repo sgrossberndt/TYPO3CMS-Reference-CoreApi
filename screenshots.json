@@ -46,9 +46,25 @@
                 ],
                 "AdminTools": [
                     {"include": "_default"},
-                    {"action": "resizeWindow", "width": 1024,"height": 780},
+                    {"action": "resizeWindow", "width": 640,"height": 480},
                     {"action": "setScreenshotsImagePath","path": "Images/AutomaticScreenshots/AdminTools"},
                     {"action": "setScreenshotsRstPath","path": "Images/AutomaticScreenshots/AdminTools"},
+                    {
+                        "action": "amOnPage",
+                        "page": "/typo3/install.php"
+                    },
+                    {
+                        "action": "waitForText",
+                        "text": "The Install Tool is locked"
+                    },
+                    {
+                        "action": "makeScreenshotOfElement",
+                        "selector": ".col-md-6",
+                        "fileName": "EnableInstallTool",
+                        "captionText": "Screen to enable the Install Tool"
+                    },
+                    {"action": "reloadBackend"},
+                    {"action": "resizeWindow", "width": 1024,"height": 780},
                     {"action": "scrollModuleMenuTo", "toSelector": "//button[contains(., 'Settings')]"},
                     {"action": "click", "link": "Settings"},
                     {"action": "switchToContentFrame"},
@@ -113,6 +129,15 @@
                     },
                     {"action": "closeModalDialog"},
                     {"action": "switchToMainFrame"},
+                    {"action": "resizeWindow", "width": 1024,"height": 400},
+                    {"action": "scrollModuleMenuTo", "toSelector": "#tools"},
+                    {
+                        "action": "makeScreenshotOfWindow",
+                        "fileName": "EditorAdminPrivileges",
+                        "captionText": "Screenshot of a menu with the section \"Admin Tools\""
+                    },
+                    {"action": "clearDrawings"},
+                    {"action": "resizeWindow", "width": 1024,"height": 780},
                     {"action": "scrollModuleMenuTo", "toSelector": "//button[contains(., 'Upgrade')]"},
                     {"action": "click", "link": "Upgrade"},
                     {"action": "switchToContentFrame"},
@@ -149,7 +174,18 @@
                         "action": "makeScreenshotOfElement",
                         "fileName": "FeatureToggles"
                     },
-                    {"action": "closeModalDialog"}
+                    {"action": "closeModalDialog"},
+                    {"action": "switchToContentFrame"},
+                    {"action": "resizeWindow", "width": 1024,"height": 400},
+                    {
+                        "action": "drawBox",
+                        "selector": "//div[contains(@class, 'card-size-fixed-small') and contains(., 'Change Install Tool Password')]"
+                    },
+                    {
+                        "action": "makeScreenshotOfElement",
+                        "fileName": "ChangeInstallToolPassword",
+                        "captionText": "Screen to change the Install Tool password"
+                    }
                 ]
             }
         },
@@ -179,7 +215,6 @@
                         "captionText": "The new page type visible in the TYPO3 backend"
                     }
                 ],
-
                 "AdminTools": [
                     {"include": "_default"},
                     {"action": "setScreenshotsImagePath","path": "Images/AutomaticScreenshots/AdminTools"},
