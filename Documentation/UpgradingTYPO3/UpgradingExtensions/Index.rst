@@ -1,39 +1,28 @@
-.. include:: ../../Includes.rst.txt
-.. _index:
+.. include:: /Includes.rst.txt
+.. _upgradingextensions:
 
 ====================
 Upgrading Extensions
 ====================
 
-If you have extensions installed, find the corresponding newer
-versions you want to install for your new major version, and update them too.
+List extensions
+---------------
 
-Example::
+Like TYPO3's core, extensions are also composer packages. The `composer info` command will list all
+extensions that are currently installed including their name and current version number.
 
-   composer require typo3/cms-backend:^9.5 typo3/cms-core:^9.5 \
-      typo3/cms-extbase:^9.5 typo3/cms-extensionmanager:^9.5 \
-      typo3/cms-filelist:^9.5 typo3/cms-fluid:^9.5 typo3/cms-frontend:^9.5 \
-      typo3/cms-install:^9.5 typo3/cms-recordlist:^9.5 georgringer/news:^7.0 \
-      --update-with-dependencies
+Check for updates
+-----------------
 
-.. tip::
+To check if any extension upgrades are available, `composer outdated` can be used to display a list
+of packages that have updates along with their new version number.
 
-   To make selecting the packages easier, you can use the TYPO3 `Composer Helper
-   <https://get.typo3.org/misc/composer/helper>`_ to find the packages you need.
+Upgrade an extension (minor)
+----------------------------
 
-To find the matching extension versions you can go to `packagist.org
-<https://packagist.org/>`_, search for your extension and take a look at the
-"requires" section.
+Minor upgrades of an extension can be done with the composer command `composer update vendor/packagename`.
 
-.. tip::
+Upgrade an extension (major)
+----------------------------
 
-   The list of system extensions developed directly in the TYPO3 core repository
-   changes from time to time: Some extensions are merged into others, new system extensions
-   are added, and others abandoned or released to the public (and therefore maintained at a
-   different place).
-   You will find information on the details in this `list
-   <https://docs.typo3.org/Home/SystemExtensions.html>`_ or search in the
-   `breaking changes <https://docs.typo3.org/c/typo3/cms-core/master/en-us/Index.html>`_
-   for the extension key (not the package name!).
-
-.. include:: /Images/ExternalScreenshots/ExtOnPackagist.rst.txt
+Major upgrades of an extension can be done with the composer command `composer require vendor/packagename:<new version>`.

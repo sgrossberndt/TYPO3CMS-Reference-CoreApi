@@ -1,14 +1,10 @@
-.. include:: ../../Includes.rst.txt
+.. include:: /Includes.rst.txt
 
-.. _index:
+.. _legacy:
 
 ==============
 Legacy Upgrade
 ==============
-
-//TODO overview of legacy installation
- - why its considered legacy
- - The new method of upgraing
 
 Minor Upgrades  - Using The Core Updater
 ========================================
@@ -50,6 +46,37 @@ the source package of the new TYPO3 version.
 Extract the package on your web server and, in your TYPO3 document root,
 adjust the :file:`typo3_src` symlink.
 
+Disabling the Core Updater
+--------------------------
+
+The Core Updater functionality can be turned off, in order to avoid users using it,
+i.e. if you use your own update mechanism.
+
+This feature is already disabled when TYPO3 is installed via Composer.
+
+To disable the core updater, you can set this environment variable::
+
+   TYPO3_DISABLE_CORE_UPDATER=1
+
+For example in Apache:
+
+.. code-block:: apacheconf
+
+   SetEnv TYPO3_DISABLE_CORE_UPDATER 1
+
+or for NGINX:
+
+.. code-block:: nginx
+
+   server {
+     location ~ path/to/it {
+       include fastcgi_params;
+       fastcgi_param TYPO3_DISABLE_CORE_UPDATER "1";
+     }
+   }
+
+This will remove the button and all related functionality in the Install
+Tool.
 
 What's the Next Step?
 =====================

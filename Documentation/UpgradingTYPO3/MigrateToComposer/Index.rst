@@ -1,6 +1,6 @@
-.. include:: ../Includes.txt
+.. include:: /Includes.rst.txt
 
-.. _index:
+.. _migratetocomposer:
 
 ===================================
 Migrate A TYPO3 Project To Composer

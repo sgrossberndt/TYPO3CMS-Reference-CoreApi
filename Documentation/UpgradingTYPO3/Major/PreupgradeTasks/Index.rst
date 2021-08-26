@@ -1,13 +1,10 @@
-.. include:: ../../Includes.rst.txt
+.. include:: /Includes.rst.txt
 
 .. _preupgradetasks:
 
 =================
 Pre-upgrade Tasks
 =================
-
-* You should use the latest version of a previous major version before you upgrade!
-  For example, upgrade to latest 9.5.x before you upgrade to version 10.
 
 Before starting the upgrade check your system for compatibility with a newer
 TYPO3 version.
