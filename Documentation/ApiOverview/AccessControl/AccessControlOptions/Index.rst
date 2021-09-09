@@ -249,18 +249,26 @@ module:
 
 .. include:: /Images/AutomaticScreenshots/AccessControl/AccessModule.rst.txt
 
+To change a page permission, click on the related icon and it
+will switch state. To change the owner or the group of a given
+page, click on the owner's or group's name and a small form appears.
 
-Editing permissions is described in details in the
-:ref:`Getting Started Tutorial <t3start:page-permissions>`.
+It is also possible to change the owner, group and permissions
+recursively.
 
-A user must be "admin" *or* the owner of a page in order to edit its
-permissions.
+Changing the owner of a page
+----------------------------
 
-When a user creates new pages in TYPO3 CMS they will by default get the
-creating user as owner. The owner group will be set to the *first
-listed user group* configured for the users record (if any). These defaults
+When a user creates a new page they will by default become the owner of that page.
+The group ownership for that page will be set to the *first listed user group* configured for that users record (if any). These defaults
 can be changed through :ref:`page TSconfig <t3tsconfig:pagetcemain-permissions-user-group>`.
 
+File operation permissions
+--------------------------
+
+Giving access to file mounts is not the whole story. Specific operations
+on files and directories must be allowed. This is what the next field
+does. Choose either "Directory" or "Files" and start checking boxes.
 
 .. _access-options-user-tsconfig:
 
