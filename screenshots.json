@@ -696,7 +696,52 @@
                         "fileName": "ExtensionScannerReport",
                         "captionText": "View extension scanner report"
                     },
-                    {"action": "closeModalDialog"}
+                    {"action": "closeModalDialog"},
+                    {
+                        "action": "switchToMainFrame"
+                    },
+                    {"action": "closeModalDialog"}, {
+                        "action": "scrollModuleMenuTo",
+                        "toSelector": "button#system"
+                    }, {
+                        "action": "waitForText",
+                        "text": "Extensions",
+                        "timeout": 5
+                    }, {
+                        "action": "click",
+                        "link": "Maintenance"
+                    }, {
+                        "action": "switchToContentFrame"
+                    }, {
+                        "action": "fillField",
+                        "field": "input#confirmationPassword",
+                        "value": "password"
+                    }, {
+                        "action": "click",
+                        "link": "Confirm"
+                    }, {
+                        "comment": "********************************************************"
+                    }, {
+                        "comment": "Maintenance Section of Admin Tool"
+                    }, {
+                        "comment": "********************************************************"
+                    }, {
+                        "action": "waitForText",
+                        "text": "Maintenance",
+                        "timeout": 5
+                    }, {
+                        "action": "resizeWindow",
+                        "width": 1024,
+                        "height": 512
+                    }, {
+                        "action": "wait",
+                        "timeout": "1"
+                    }, {
+                        "action": "makeScreenshotOfElement",
+                        "fileName": "AdminTools",
+                        "altText": "Admin Tools",
+                        "captionText": "The Admin Tools in the Module Section"
+                    }
                 ],
                 "ContextualMenu": [
                     {"include": "_default"},
@@ -1730,6 +1775,20 @@
                         "captionText": "The file mount is assigned to the \"Editors\" group"
                     },
                     {"action": "reloadBackend"},
+                    {
+                        "action": "goToField",
+                        "fields": "file_permissions"
+                    },
+                    {
+                        "action": "click",
+                        "link": "Directory"
+                    },
+                    {
+                        "action": "makeScreenshotOfElement",
+                        "selector": ".form-section",
+                        "fileName": "EditFilePermissions",
+                        "captionText": "Giving specific file operation permissions"
+                    },
                     {
                         "action": "resizeWindow",
                         "width": 1424,

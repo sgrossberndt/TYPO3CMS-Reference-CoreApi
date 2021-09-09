@@ -57,7 +57,7 @@ It contains many more fields!
 The "admin" user
 ================
 
-There is a special kind of backend users called "Admin".
+There is a special kind of backend user called "Admin".
 When creating a backend user, just check the "Admin!" box in the
 "General" tab and that user will become an administrator.
 There's no need to set further access options for such a user:
@@ -88,6 +88,24 @@ Admin users are differentiated with an orange icon.
    in order to create an admin account for himself. This type of escalation
    cannot be allowed.
 
+.. index:: System maintainers
+.. _access-users-system-maintainers:
+
+System maintainers
+==================
+
+The first backend admin created during installation will automatically be a system
+maintainer as well. To give other users system privileges, you
+can add them in the :guilabel:`ADMIN TOOLS > Settings > Manage System Maintainers`
+configuration.
+Alternatively the website can be set into "Development" mode in the Install
+Tool. This will give all admin users system maintainer access.
+
+.. include:: /Images/AutomaticScreenshots/AdminTools/AdminTools.rst.txt
+
+System Maintainers are the only users who are able to see and access the Install Tool
+and the Extension Manager. These users are persisted within the
+:file:`LocalConfiguration.php` as :php:`$GLOBALS['TYPO3_CONF_VARS']['SYS']['systemMaintainers']`.
 
 .. _access-users-groups-location:
 
