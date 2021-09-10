@@ -28,8 +28,8 @@ On composer based installations it can be required via
    composer req typo3/cms-impexp
 
 
-Export your data
-================
+Export data
+===========
 
 .. rst-class:: bignums
 
@@ -81,8 +81,8 @@ Export your data
 
       .. include:: /Images/AutomaticScreenshots/ImportExport/DownloadExport.rst.txt
 
-Import your data
-================
+Import data
+===========
 
 .. note::
 
@@ -113,6 +113,39 @@ Import your data
    3. Import
 
       Click the import button.
+
+Using the command line
+======================
+
+Import and export tasks can also be carried out using the command line. `impexp:import`
+and `impexp:export` can be used.
+
+
+Import data
+-----------
+
+.. code-block:: bash
+
+   /typo3/sysext/core/bin/typo3 impexp:import [<options>] <file> <pageId>
+
+The `impexp:import` command can also be customised:
+
+.. code-block:: bash
+
+      /typo3/sysext/core/bin/typo3 impexp:import --updateRecords my-import.t3d --pageId=1
+
+Export data
+-----------
+
+.. code-block:: bash
+
+   typo3/sysext/core/bin/typo3 impexp:export [options] [--] [<filename>]
+
+The `impexp:export` command can be customised:
+
+.. code-block:: bash
+
+   typo3/sysext/core/bin/typo3 impexp:export --type=t3d --pid=1 my-export.t3d
 
 
 Importing data from old TYPO3 versions
