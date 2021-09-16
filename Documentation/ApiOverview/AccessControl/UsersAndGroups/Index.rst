@@ -101,8 +101,6 @@ configuration.
 Alternatively the website can be set into "Development" mode in the Install
 Tool. This will give all admin users system maintainer access.
 
-.. include:: /Images/AutomaticScreenshots/AdminTools/AdminTools.rst.txt
-
 System Maintainers are the only users who are able to see and access the Install Tool
 and the Extension Manager. These users are persisted within the
 :file:`LocalConfiguration.php` as :php:`$GLOBALS['TYPO3_CONF_VARS']['SYS']['systemMaintainers']`.
@@ -127,5 +125,3 @@ relation to the page where a record belongs. Since no pages can have
 the id of zero, this is the id of the root. Notice that only "admin"
 users can edit records in the page root!
 
-If you need non-admin users to create new backend users, have a look
-at the TYPO3 system extension `sys_action` for a possible solution.
